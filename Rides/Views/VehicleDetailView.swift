@@ -71,5 +71,11 @@ struct VehicleDetailView: View {
             .padding(.vertical)
         }
         .navigationTitle("Vehicle Details")
+        .background(
+            RoundedRectangle(cornerRadius: 15)
+                .fill(Color.white)
+                .shadow(color: .gray.opacity(0.3), radius: 5, x: 0, y: 5)
+        )
+        .padding(.vertical, 20)
     }
 }

@@ -22,6 +22,11 @@
 		10BAA86F2C9D012C00CBFE1F /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAA86E2C9D012C00CBFE1F /* Vehicle.swift */; };
 		10BAA8712C9D0FA800CBFE1F /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAA8702C9D0FA800CBFE1F /* VehicleDetailView.swift */; };
 		10BAA8762C9D11BB00CBFE1F /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAA8752C9D11BB00CBFE1F /* SortOption.swift */; };
+		10BAA8782C9D153A00CBFE1F /* ContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAA8772C9D153A00CBFE1F /* ContentViewModelTests.swift */; };
+		10BAA87B2C9D15DC00CBFE1F /* GetVehiclesUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAA87A2C9D15DC00CBFE1F /* GetVehiclesUseCaseMock.swift */; };
+		10BAA87D2C9D227E00CBFE1F /* CarbonEmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAA87C2C9D227E00CBFE1F /* CarbonEmissionView.swift */; };
+		10BAA87F2C9D22A000CBFE1F /* VehicleDetailsScrollableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAA87E2C9D22A000CBFE1F /* VehicleDetailsScrollableView.swift */; };
+		10BAA8812C9D242F00CBFE1F /* CarbonEmissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAA8802C9D242F00CBFE1F /* CarbonEmissionViewModel.swift */; };
 		92BEF22EB534D8D018799E48 /* Pods_Rides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39009B6728366130072428F /* Pods_Rides.framework */; };
 		E950961D9934A3695274AFF2 /* Pods_RidesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35DF884C9ED8483540E77D3 /* Pods_RidesTests.framework */; };
 		FF43E639B3E1C0B396C76C93 /* Pods_Rides_RidesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76CCD7F64204E347F8186F0D /* Pods_Rides_RidesUITests.framework */; };
@@ -64,6 +69,11 @@
 		10BAA86E2C9D012C00CBFE1F /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		10BAA8702C9D0FA800CBFE1F /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
 		10BAA8752C9D11BB00CBFE1F /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
+		10BAA8772C9D153A00CBFE1F /* ContentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelTests.swift; sourceTree = "<group>"; };
+		10BAA87A2C9D15DC00CBFE1F /* GetVehiclesUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVehiclesUseCaseMock.swift; sourceTree = "<group>"; };
+		10BAA87C2C9D227E00CBFE1F /* CarbonEmissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonEmissionView.swift; sourceTree = "<group>"; };
+		10BAA87E2C9D22A000CBFE1F /* VehicleDetailsScrollableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsScrollableView.swift; sourceTree = "<group>"; };
+		10BAA8802C9D242F00CBFE1F /* CarbonEmissionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonEmissionViewModel.swift; sourceTree = "<group>"; };
 		32BB5A7590A09BA5F1B31E21 /* Pods-RidesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RidesTests.release.xcconfig"; path = "Target Support Files/Pods-RidesTests/Pods-RidesTests.release.xcconfig"; sourceTree = "<group>"; };
 		43AE1822DAD230A7BC65BA2E /* Pods-Rides-RidesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rides-RidesUITests.release.xcconfig"; path = "Target Support Files/Pods-Rides-RidesUITests/Pods-Rides-RidesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		67B5D6AF4BC273046D64F3C5 /* Pods-Rides-RidesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rides-RidesUITests.debug.xcconfig"; path = "Target Support Files/Pods-Rides-RidesUITests/Pods-Rides-RidesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				10BAA8482C9C6F4500CBFE1F /* RidesTests.swift */,
+				10BAA8772C9D153A00CBFE1F /* ContentViewModelTests.swift */,
+				10BAA8792C9D15C700CBFE1F /* Mock */,
 			);
 			path = RidesTests;
 			sourceTree = "<group>";
@@ -204,6 +216,9 @@
 				10BAA8392C9C6F4400CBFE1F /* ContentView.swift */,
 				10BAA8662C9CFA2400CBFE1F /* ContentViewModel.swift */,
 				10BAA8702C9D0FA800CBFE1F /* VehicleDetailView.swift */,
+				10BAA87E2C9D22A000CBFE1F /* VehicleDetailsScrollableView.swift */,
+				10BAA87C2C9D227E00CBFE1F /* CarbonEmissionView.swift */,
+				10BAA8802C9D242F00CBFE1F /* CarbonEmissionViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +229,14 @@
 				10BAA8642C9CF52800CBFE1F /* DependencyContainer.swift */,
 			);
 			path = Dependency;
+			sourceTree = "<group>";
+		};
+		10BAA8792C9D15C700CBFE1F /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				10BAA87A2C9D15DC00CBFE1F /* GetVehiclesUseCaseMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		4498FB49B1EF0D6F7B385FCC /* Pods */ = {
@@ -478,13 +501,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				10BAA86F2C9D012C00CBFE1F /* Vehicle.swift in Sources */,
+				10BAA87F2C9D22A000CBFE1F /* VehicleDetailsScrollableView.swift in Sources */,
 				10BAA83A2C9C6F4400CBFE1F /* ContentView.swift in Sources */,
 				10BAA86A2C9D006400CBFE1F /* GetVehiclesUseCase.swift in Sources */,
 				10BAA8712C9D0FA800CBFE1F /* VehicleDetailView.swift in Sources */,
 				10BAA8632C9C73FE00CBFE1F /* Services.swift in Sources */,
 				10BAA8652C9CF52800CBFE1F /* DependencyContainer.swift in Sources */,
 				10BAA8762C9D11BB00CBFE1F /* SortOption.swift in Sources */,
+				10BAA8812C9D242F00CBFE1F /* CarbonEmissionViewModel.swift in Sources */,
 				10BAA8382C9C6F4400CBFE1F /* RidesApp.swift in Sources */,
+				10BAA87D2C9D227E00CBFE1F /* CarbonEmissionView.swift in Sources */,
 				10BAA8672C9CFA2400CBFE1F /* ContentViewModel.swift in Sources */,
 				10BAA86C2C9D00DB00CBFE1F /* GetRandomVehiclesUseCase.swift in Sources */,
 			);
@@ -494,6 +520,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10BAA8782C9D153A00CBFE1F /* ContentViewModelTests.swift in Sources */,
+				10BAA87B2C9D15DC00CBFE1F /* GetVehiclesUseCaseMock.swift in Sources */,
 				10BAA8492C9C6F4500CBFE1F /* RidesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,7 +739,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yasserh.RidesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -731,7 +759,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yasserh.RidesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

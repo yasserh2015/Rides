@@ -26,6 +26,15 @@ struct ContentView: View {
                     .keyboardType(.numberPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
+                if case .update(let values) = currentState {
+                    if values.showInputError {
+                        Text("Please enter a valid number between 1 and 100.")
+                            .foregroundColor(.red)
+                            .font(.caption)
+                            .padding(.bottom, 5)
+                    }
+                }
+                
                 Button(action: {
                     if let count = Int(vehicleCount) {
                         viewModel.apply(input: .onPressButton(count: count))
@@ -43,7 +52,9 @@ struct ContentView: View {
                 .padding(.horizontal)
                 
                 if case .update(let values) = currentState {
-                    createListView(values: values)
+                    if !values.vehicles.isEmpty {
+                        createListView(values: values)
+                    }
                 }
             }
             .navigationTitle("Vehicles list")
@@ -67,7 +78,7 @@ struct ContentView: View {
             
             List(values.vehicles, id: \.id) { vehicle in
                 VStack(alignment: .leading) {
-                    NavigationLink(destination: VehicleDetailView(vehicle: vehicle)) {
+                    NavigationLink(destination: VehicleDetailsScrollableView(vehicle: vehicle)) {
                         VStack(alignment: .leading) {
                             Text("Make and Model: \(vehicle.makeAndModel)")
                             Text("Vin: \(vehicle.vin)")

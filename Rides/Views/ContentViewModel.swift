@@ -30,9 +30,12 @@ class ContentViewModel {
 
     class Values: ObservableObject {
         @Published var vehicles: [Vehicle]
+        @Published var showInputError: Bool
 
-        init(vehicles: [Vehicle]) {
+        init(vehicles: [Vehicle],
+             showInputError: Bool) {
             self.vehicles = vehicles
+            self.showInputError = showInputError
         }
     }
     
@@ -44,9 +47,17 @@ class ContentViewModel {
     func apply(input: Input) {
         switch(input) {
         case .onPressButton(let count):
-            getVehicles(count: count)
+            validateInput(count: count)
         case .onSortOptionSelection(let sortOption):
             sortVehicles(by: sortOption)
+        }
+    }
+    
+    private func validateInput(count: Int) {
+        if count >= 1 && count <= 100 {
+            getVehicles(count: count)
+        } else {
+            updateView(showError: true)
         }
     }
     
@@ -60,10 +71,8 @@ class ContentViewModel {
                     break
                 }
             } receiveValue: { vehicles in
-                if !vehicles.isEmpty {
-                    self.vehicles = vehicles
-                    self.updateView()
-                }
+                self.vehicles = vehicles
+                self.updateView(showError: false)
             }.store(in: &cancellables)
     }
     
@@ -74,11 +83,13 @@ class ContentViewModel {
         case .carType:
             vehicles.sort { $0.carType < $1.carType }
         }
-        updateView()
+        updateView(showError: false)
     }
     
-    private func updateView() {
-        let values = ContentViewModel.Values(vehicles: vehicles)
+    
+    private func updateView(showError: Bool) {
+        let values = ContentViewModel.Values(vehicles: vehicles,
+                                             showInputError: showError)
         stateSubject.send(.update(values))
     }
 }
